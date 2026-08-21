@@ -116,7 +116,7 @@ export async function handleCommand(
     }
     const user = interaction.options.getUser("user", true);
     const status = interaction.commandName === "allow" ? "allowed" : "blocked";
-    setMember(user.id, user.username, status, config.buyerRoleId ? "Buyer" : "Member");
+    setMember(user.id, user.username, status, "Member");
     await interaction.reply({ content: `${user} is now ${status}.`, ephemeral: true });
     return;
   }
@@ -125,7 +125,7 @@ export async function handleCommand(
     const key = interaction.options.getString("key", true).trim();
     const accepted = redeemKey(key);
     if (accepted) {
-      setMember(interaction.user.id, interaction.user.username, "allowed", "Buyer");
+      setMember(interaction.user.id, interaction.user.username, "allowed", "Member");
     }
     await interaction.reply({
       ephemeral: true,
