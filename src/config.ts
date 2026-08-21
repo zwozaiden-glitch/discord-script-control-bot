@@ -13,6 +13,5 @@ export const config = {
   clientId: process.env.DISCORD_CLIENT_ID!,
   guildId: process.env.DISCORD_GUILD_ID,
   ownerId: process.env.OWNER_ID!,
-  buyerRoleId: process.env.BUYER_ROLE_ID,
   panelUrl: process.env.PANEL_URL ?? "http://localhost:5173",
 };
